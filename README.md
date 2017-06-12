@@ -30,6 +30,7 @@ The syntax is as follows:
 
     example: xmlreport products.xml --version
     output:
+```
             products
                 product
                     name
@@ -40,7 +41,7 @@ The syntax is as follows:
                     type
 
             version = 1.0
-
+```
 
 3.  When using xmlreport with the file products.xml and --element=,
     a report will output the all unique data for the listed elements at the same level, in the order of the listed elements.
@@ -48,28 +49,31 @@ The syntax is as follows:
 
     example: xmlreport products.xml --element:name
     output:
+    ```
             Apple
             Pear
             Grapes
             shirt
             ...
-
+```
    example: xmlreport products.xml --element:name --element:cost
     output:
+    ```
             Apple, £0.17
             Pear, £0.12
             Grapes, £0.78
             shirt, £7.45
             ...
-
+```
    example: xmlreport products.xml --element:cost --element:name
     output:
+    ```
             £0.17, Apple
             £0.12, Pear
             £0.78, Grapes
             £7.45, shirt
             ...
-
+```
 
 Other requirements:
     a) checks that the first line starts with a valid xml version element. e.g. <?xml version="1.0" encoding="UTF-8"?>. The version number can be any value in the format n.n
@@ -86,6 +90,7 @@ Other requirements:
 
 The start code is provided, and any class or function can be used from the provided included header files.
 
+```
 #include <cctype>  // for use of toupper or tolower functions
 #include <fstream>
 #include <iostream>
@@ -116,3 +121,4 @@ int main(int argc, char* argv[])
 {
     return 0;
 }
+```

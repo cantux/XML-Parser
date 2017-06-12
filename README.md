@@ -1,20 +1,19 @@
-example usage:
-
-./xmlreport asdf --version --element:cost --element:company --element:name --print-all
-
-Create a C++ program called "xmlreport" that runs from the command line that works with any xml file.
+C++ program called "xmlreport" that runs from the command line that works with any xml file.
 The program will return 0 when successful, or 1 for any error detected.
 
 The syntax is as follows:
-
+```
    xmlreport filename [--version] [--element:] [--element:] [...]
+```
 
+1. When using xmlreport with the file products.xml only, the output will produce all unique elements. All elements starting with <? can be ignored for this output.
 
-1.  When using xmlreport with the file products.xml only, the output will produce all unique elements.
-    All elements starting with <? can be ignored for this output.
+example: xmlreport products.xml
 
-    example: xmlreport products.xml
-    output:
+output:
+
+```
+
             products
                 product
                     name
@@ -23,69 +22,86 @@ The syntax is as follows:
                     company
                     cost
                     type
-
-
-2.  When using xmlreport with the file products.xml and --version,
-    a report will output all unique elements and version number.
-
-    example: xmlreport products.xml --version
-    output:
-```
-            products
-                product
-                    name
-                    description
-                    country
-                    company
-                    cost
-                    type
-
-            version = 1.0
 ```
 
-3.  When using xmlreport with the file products.xml and --element=,
-    a report will output the all unique data for the listed elements at the same level, in the order of the listed elements.
-    E.g. if the level is <products><product><name> then all elements matching that level will be output.
+2. When using xmlreport with the file products.xml and --version, a report will output all unique elements and version number.
 
-    example: xmlreport products.xml --element:name
-    output:
-    ```
-            Apple
-            Pear
-            Grapes
-            shirt
-            ...
+example: xmlreport products.xml --version
+
+output:
+
 ```
-   example: xmlreport products.xml --element:name --element:cost
-    output:
-    ```
-            Apple, £0.17
-            Pear, £0.12
-            Grapes, £0.78
-            shirt, £7.45
-            ...
+    products
+        product
+            name
+            description
+            country
+            company
+            cost
+            type
+
+    version = 1.0
 ```
-   example: xmlreport products.xml --element:cost --element:name
-    output:
-    ```
-            £0.17, Apple
-            £0.12, Pear
-            £0.78, Grapes
-            £7.45, shirt
-            ...
+
+3. When using xmlreport with the file products.xml and --element:, a report will output the all unique data for the listed elements at the same level, in the order of the listed elements.
+
+E.g. if the level is <products><product><name> then all elements matching that level will be output.
+
+example: xmlreport products.xml --element:name
+
+output:
+
+```
+    Apple
+    Pear
+    Grapes
+    shirt
+    ...
+```
+example: xmlreport products.xml --element:name --element:cost
+
+output:
+
+```
+    Apple, £0.17
+    Pear, £0.12
+    Grapes, £0.78
+    shirt, £7.45
+    ...
+```
+example: xmlreport products.xml --element:cost --element:name
+
+output:
+
+```
+    £0.17, Apple
+    £0.12, Pear
+    £0.78, Grapes
+    £7.45, shirt
+    ...
 ```
 
 Other requirements:
-    a) checks that the first line starts with a valid xml version element. e.g. <?xml version="1.0" encoding="UTF-8"?>. The version number can be any value in the format n.n
-    b) Ignore any elements including the child elements where a start and end tag don't match. I will edit products.xml and create errors to test.
-    c) Function implementation may be no more than 40 lines (including comments).
-    d) Global variables and constants are not allow. I.e. only allows variables and constants as members of a class, or within member functions and main.
-    e) #define cannot be used for constants.
-    f) No use of C++ 11 features.
-    g) No function can be copy/pasted, so if you need to use the provided compare function for example in multiple classes then re-factor.
-    h) this must be C++, so no use of 'C' style casts and no use of int as boolean.
-    i) --element and --version are case insensitive. e.g. --ELEMENT and --element are treated the same.
-    j) There will be no warnings produced by the compiler on level 4, no memory leaks and the program will not crash.
+
+a) checks that the first line starts with a valid xml version element. e.g. <?xml version="1.0" encoding="UTF-8"?>. The version number can be any value in the format n.n
+
+b) Ignore any elements including the child elements where a start and end tag don't match. I will edit products.xml and create errors to test.
+
+c) Function implementation may be no more than 40 lines (including comments).
+
+d) Global variables and constants are not allow. I.e. only allows variables and constants as members of a class, or within member functions and main.
+
+e) #define cannot be used for constants.
+
+f) No use of C++ 11 features.
+
+g) No function can be copy/pasted, so if you need to use the provided compare function for example in multiple classes then re-factor.
+
+h) this must be C++, so no use of 'C' style casts and no use of int as boolean.
+
+i) --element and --version are case insensitive. e.g. --ELEMENT and --element are treated the same.
+
+j) There will be no warnings produced by the compiler on level 4, no memory leaks and the program will not crash.
 
 
 The start code is provided, and any class or function can be used from the provided included header files.

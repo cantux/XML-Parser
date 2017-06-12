@@ -8,7 +8,11 @@ The syntax is as follows:
 
 1. When using xmlreport with the file products.xml only, the output will produce all unique elements. All elements starting with <? can be ignored for this output.
 
-example: xmlreport products.xml
+example: 
+
+```
+xmlreport products.xml
+```
 
 output:
 
@@ -26,7 +30,11 @@ output:
 
 2. When using xmlreport with the file products.xml and --version, a report will output all unique elements and version number.
 
-example: xmlreport products.xml --version
+example: 
+
+```
+xmlreport products.xml --version
+```
 
 output:
 
@@ -47,7 +55,11 @@ output:
 
 E.g. if the level is <products><product><name> then all elements matching that level will be output.
 
-example: xmlreport products.xml --element:name
+example: 
+
+```
+xmlreport products.xml --element:name
+```
 
 output:
 
@@ -58,7 +70,11 @@ output:
     shirt
     ...
 ```
-example: xmlreport products.xml --element:name --element:cost
+example: 
+
+```
+xmlreport products.xml --element:name --element:cost
+```
 
 output:
 
@@ -69,7 +85,11 @@ output:
     shirt, £7.45
     ...
 ```
-example: xmlreport products.xml --element:cost --element:name
+example: 
+
+```
+xmlreport products.xml --element:cost --element:name
+```
 
 output:
 

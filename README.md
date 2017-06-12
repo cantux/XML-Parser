@@ -1,9 +1,9 @@
-C++ program called "xmlreport" that runs from the command line that works with any xml file.
+C++ program called "xmlreport" that runs from the command line. Parses any valid XML file and prints a report following the rules below.
 The program will return 0 when successful, or 1 for any error detected.
 
 The syntax is as follows:
 ```
-   xmlreport filename [--version] [--element:] [--element:] [...]
+./xmlreport filename [--version] [--element:] [--element:] [...]
 ```
 
 1. When using xmlreport with the file products.xml only, the output will produce all unique elements. All elements starting with <? can be ignored for this output.
@@ -11,7 +11,7 @@ The syntax is as follows:
 example: 
 
 ```
-xmlreport products.xml
+./xmlreport products.xml
 ```
 
 output:
@@ -33,7 +33,7 @@ output:
 example: 
 
 ```
-xmlreport products.xml --version
+./xmlreport products.xml --version
 ```
 
 output:
@@ -58,7 +58,7 @@ E.g. if the level is <products><product><name> then all elements matching that l
 example: 
 
 ```
-xmlreport products.xml --element:name
+./xmlreport products.xml --element:name
 ```
 
 output:
@@ -73,7 +73,7 @@ output:
 example: 
 
 ```
-xmlreport products.xml --element:name --element:cost
+./xmlreport products.xml --element:name --element:cost
 ```
 
 output:
@@ -88,7 +88,7 @@ output:
 example: 
 
 ```
-xmlreport products.xml --element:cost --element:name
+./xmlreport products.xml --element:cost --element:name
 ```
 
 output:

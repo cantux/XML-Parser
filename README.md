@@ -1,3 +1,7 @@
+example usage:
+
+./xmlreport asdf --version --element:cost --element:company --element:name --print-all
+
 Create a C++ program called "xmlreport" that runs from the command line that works with any xml file.
 The program will return 0 when successful, or 1 for any error detected.
 

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+	<product id="1" company_id="1001">
+		<name>Apple</name>
+		<description>A night big red one</description>
+		<country>USA</country>
+		<company>Fruits R Us</company>
+		<cost>£0.17</cost>
+		<type>Food</type>
+	</product>
+	<product id="2" company_id="011">
+		<name>Pear</name>
+		<description>Yellow and juicy</description>
+		<country>Greece</country>
+		<company>Sunny produce company</company>
+		<cost>£0.12</cost>
+		<type>food</type>
+	</product>
+	<product id="3" company_id="042">
+		<name>Grapes</name>
+		<description>Green seeded</description>
+		<country>Greece</country>
+		<company>Sunny produce company</company>
+		<cost>£0.78</cost>
+		<type>Food</type>
+	</product>
+	<product id="4" company_id="C457">
+		<name>shirt</name>
+		<description>Smart office wear</description>
+		<country>Portugal</country>
+		<company>Style for you</company>
+		<cost>£7.45</cost>
+		<type>Clothing</type>
+	</product>
+	<product id="5" company_id="SN10002358">
+		<name>Kettle</name>
+		<description>Boil some water</description>
+		<country>Turkey</country>
+		<company>Vestel</company>
+		<cost>£12.51</cost>
+		<type>Electronics</type>
+	</product>
+	<product id="6" company_id="SN02044311">
+		<name>Set top box</name>
+		<description>Watch some tv</description>
+		<country>Turkey</country>
+		<company>Vestel</company>
+		<cost>£17.99</cost>
+		<type>Electronics</type>
+	</product>
+</products>

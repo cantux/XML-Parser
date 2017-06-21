@@ -1,3 +1,12 @@
+### Uses of this software
+- Check if the xml is valid.
+- Get values of elements.
+
+### Send me a PR for
+- Querying and printing attributes. This software already parses attributes(see XmlAttribute and use --print-all option) but is not concerned with printing them.
+- Security, typesafety enhancements
+
+### 
 C++ program called "xmlreport" that runs from the command line. Parses any valid XML file and prints a report following the rules below.
 The program will return 0 when successful, or 1 for any error detected.
 

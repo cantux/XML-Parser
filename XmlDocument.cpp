@@ -19,7 +19,7 @@ void XmlDocument::createDocument()
 {
     //open file
     std::string line;
-    std::ifstream myfile("lesson/products.xml");
+    std::ifstream myfile(m_file_name.c_str());
     if (myfile.is_open())
     {
         //get document version

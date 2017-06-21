@@ -11,7 +11,7 @@ The syntax is as follows:
 example: 
 
 ```
-./xmlreport products.xml
+./xmlreport products.xml --print-all
 ```
 
 output:
@@ -28,12 +28,12 @@ output:
                     type
 ```
 
-2. When using xmlreport with the file products.xml and --version, a report will output all unique elements and version number.
+2. When using xmlreport with the file products.xml and --version, a report will output all unique elements and version number. Note that --version should always be provided as the second param...
 
 example: 
 
 ```
-./xmlreport products.xml --version
+./xmlreport products.xml --version --print-all
 ```
 
 output:

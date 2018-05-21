@@ -1,3 +1,27 @@
+### Compile
+```bin/bash
+make
+```
+### Run
+Sample xml file is included with the solution. Just run the following command:
+
+```
+./xmlreport products.xml --print-all
+```
+
+output:
+
+```
+
+            products
+                product
+                    name
+                    description
+                    country
+                    company
+                    cost
+                    type
+```
 ### Uses of this software
 - Check if the xml is valid.
 - Get values of elements.
@@ -6,7 +30,7 @@
 - Querying and printing attributes. This software already parses attributes(see XmlAttribute and use --print-all option) but is not concerned with printing them.
 - Security, typesafety enhancements
 
-### 
+### Program Specifications
 C++ program called "xmlreport" that runs from the command line. Parses any valid XML file and prints a report following the rules below.
 The program will return 0 when successful, or 1 for any error detected.
 
@@ -108,62 +132,4 @@ output:
     £0.78, Grapes
     £7.45, shirt
     ...
-```
-
-Other requirements:
-
-a) checks that the first line starts with a valid xml version element. e.g. <?xml version="1.0" encoding="UTF-8"?>. The version number can be any value in the format n.n
-
-b) Ignore any elements including the child elements where a start and end tag don't match. I will edit products.xml and create errors to test.
-
-c) Function implementation may be no more than 40 lines (including comments).
-
-d) Global variables and constants are not allow. I.e. only allows variables and constants as members of a class, or within member functions and main.
-
-e) #define cannot be used for constants.
-
-f) No use of C++ 11 features.
-
-g) No function can be copy/pasted, so if you need to use the provided compare function for example in multiple classes then re-factor.
-
-h) this must be C++, so no use of 'C' style casts and no use of int as boolean.
-
-i) --element and --version are case insensitive. e.g. --ELEMENT and --element are treated the same.
-
-j) There will be no warnings produced by the compiler on level 4, no memory leaks and the program will not crash.
-
-
-The start code is provided, and any class or function can be used from the provided included header files.
-
-```
-#include <cctype>  // for use of toupper or tolower functions
-#include <fstream>
-#include <iostream>
-#include <string>
-#include <map>
-#include <set>
-#include <list>
-#include <vector>
-
-// compare 2 strings, ignoring case.
-// return 0 when str1 and str2 are the same
-// return < 0 when str1 is less than str2.
-// return > 0 when str1 is greater than str2.
-int compare(char const* str1, char const* str2)
-{
-    for (;(*str1 != '\0') && (*str2 != '\0'); ++str1, ++str2)
-    {
-        int ch1 = toupper(*str1);
-        int ch2 = toupper(*str2);
-        if (ch1 != ch2)
-            return ch1 - ch2;
-    }
-
-    return static_cast<int>(*str1) - static_cast<int>(*str2);
-}
-
-int main(int argc, char* argv[])
-{
-    return 0;
-}
 ```
